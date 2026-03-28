@@ -313,9 +313,7 @@ public:
             NodeToDelete->prev->next = NodeToDelete->next;
         }
         delete NodeToDelete;
-         _Size--;
-
-    
+        _Size--;    
     }
 
     void DeleteFirstNode()
@@ -389,7 +387,18 @@ public:
         return (_Size == 0 ? true : false);
     }
 
+    // void Clear() {
+    //     while (_Size != 0) {
+    //        DeleteNode(head);
+    //     }   
+    // }
+    void Clear() {
+    while (head != NULL) {
+        DeleteFirstNode();
+    }
+
     
+}
 
 };
 
