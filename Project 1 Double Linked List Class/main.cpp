@@ -49,6 +49,8 @@ int main()
     MydblLinkedList.DeleteLastNode();
     MydblLinkedList.PrintList();
 
+    cout << MydblLinkedList.Size();
+
     system("pause>0");
 
 }

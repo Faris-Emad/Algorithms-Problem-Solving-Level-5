@@ -172,6 +172,8 @@ using namespace std;
 template <class T>
 class clsDblLinkedList
 {
+private:
+    int _Size = 0;
 
 public:
 
@@ -205,7 +207,7 @@ public:
             head->prev = newNode;
         }
         head = newNode;
-       
+       _Size++;
 
     }
 
@@ -258,7 +260,7 @@ public:
             current->next->prev = newNode;
         }
         current->next = newNode;
-     
+        _Size++;
 
     }
 
@@ -287,7 +289,7 @@ public:
             current->next = newNode;
             newNode->prev = current;
         }
-     
+         _Size++;
 
     }
 
@@ -311,6 +313,7 @@ public:
             NodeToDelete->prev->next = NodeToDelete->next;
         }
         delete NodeToDelete;
+         _Size--;
 
     
     }
@@ -334,6 +337,7 @@ public:
             head->prev = NULL;
         }
         delete temp;
+         _Size--;
     
     }
 
@@ -365,7 +369,20 @@ public:
         Node* temp = current->next;
         current->next = NULL;
         delete temp;
+        _Size--;
        
+    }
+    // short Size() {
+    //     Node* Current = head;
+    //     short size = 0;
+    //     while (Current != NULL) {
+    //         size++;
+    //         Current = Current->next;
+    //     }
+    //     return size;
+    // }
+    short Size() {
+        return _Size;
     }
 
 };
