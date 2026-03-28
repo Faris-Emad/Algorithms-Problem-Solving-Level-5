@@ -385,5 +385,11 @@ public:
         return _Size;
     }
 
+    bool IsEmpty() {
+        return (_Size == 0 ? true : false);
+    }
+
+    
+
 };
 
