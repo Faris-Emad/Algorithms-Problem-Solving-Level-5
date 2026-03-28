@@ -393,12 +393,41 @@ public:
     //     }   
     // }
     void Clear() {
-    while (head != NULL) {
-        DeleteFirstNode();
+        while (head != NULL) {
+            DeleteFirstNode();
+        }
+    }
+    void Reverse() {
+        /*
+            I will create a variable that starts at head.
+
+            I will make a loop that continues while this variable is not NULL.
+
+            Inside the loop: I will use a temporary variable (Temp) to store prev.
+
+            I will set prev to next (first pointer reversed).
+
+            I will set next to Temp (second pointer reversed).
+
+            I will move my current variable to the next node (through prev, as concluded).
+
+            After the loop ends, I will set head to point to the last node reached.
+        */
+        Node* current = head;
+        Node* temp = NULL;
+        while (current != NULL) {
+            temp = current->prev;
+            current->prev =  current->next;
+            current->next = temp;
+            current = current->prev;
+        }
+
+        if (temp != NULL) {
+            head = temp->prev;
+        }
+
     }
 
-    
-}
-
 };
+
 

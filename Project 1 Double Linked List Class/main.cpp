@@ -21,11 +21,12 @@ int main() {
     cout << "\nLinked List Contenet:\n";
     MydblLinkedList.PrintList();
 
-    cout << "\nNumber of items in the linked list = " << MydblLinkedList.Size();
+    MydblLinkedList.Reverse();
 
-    cout << "\nExecuting .Clear()";
-    MydblLinkedList.Clear();
-    cout << "\nNumber of items in the linked list = " << MydblLinkedList.Size();
+    cout << "\nLinked List Contenet after reverse:\n";
+    MydblLinkedList.PrintList();
+
+
     system("pause>0");
 
 }
