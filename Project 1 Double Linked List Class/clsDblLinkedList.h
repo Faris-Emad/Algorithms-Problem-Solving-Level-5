@@ -263,6 +263,23 @@ public:
         _Size++;
 
     }
+    // void InsertAfter(int Index, T value) {
+    //     Node* current = GetNode(Index);
+    //     InsertAfter(current, value);
+    // }
+    bool InsertAfter(int Index, T value) {
+        // 1. Get the node based on the index.
+        Node* current = GetNode(Index);
+
+        // 2. Guard: if the index is invalid and no node is found, return failure.
+        if (current == NULL) {
+            return false;
+        }
+
+        // 3. If the node exists, insert safely after it and return success.
+        InsertAfter(current, value);
+        return true;
+    }
 
     void InsertAtEnd(T value) {
 
@@ -460,7 +477,7 @@ public:
         else
             return Item->value; 
     }
-    void UpdateItem(int Index, T NewValue) {
+    bool UpdateItem(int Index, T NewValue) {
         Node *Item = GetNode(Index);
 
         if(Item == NULL) return false;
