@@ -9,7 +9,6 @@ using namespace std;
 
 int main() {
 
-
     clsDblLinkedList <int> MydblLinkedList;
 
     MydblLinkedList.InsertAtBeginning(5);
@@ -21,11 +20,10 @@ int main() {
     cout << "\nLinked List Contenet:\n";
     MydblLinkedList.PrintList();
 
-    MydblLinkedList.Reverse();
+    MydblLinkedList.UpdateItem(2, 500);
 
-    cout << "\nLinked List Contenet after reverse:\n";
+    cout << "\nAfter Updating Item(2): " <<"\n";
     MydblLinkedList.PrintList();
-
 
     system("pause>0");
 

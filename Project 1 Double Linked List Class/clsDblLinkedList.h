@@ -428,6 +428,46 @@ public:
 
     }
 
+    // Node* GetNode(int Index) {
+    //     if(Index <= _Size) {
+    //          Node* current = head;
+    //         for (size_t i = 0; i < Index; i++) {
+    //             if(current != NULL)
+    //                 current = current->next;
+    //         }
+    //         return current;
+    //     }
+    //     else {
+    //         return NULL;
+    //     }
+    // }
+    Node* GetNode(int Index) {
+        if (Index < 0 || Index >= _Size) {
+            return NULL;
+        }
+
+        Node* current = head;
+        for (int i = 0; i < Index; i++) {
+            current = current->next;
+        }
+        
+        return current;
+    }
+    T GetItem(int Index) {
+        Node *Item = GetNode(Index);
+        if(Item == NULL) 
+            return NULL;
+        else
+            return Item->value; 
+    }
+    void UpdateItem(int Index, T NewValue) {
+        Node *Item = GetNode(Index);
+
+        if(Item == NULL) return false;
+
+        Item->value = NewValue;
+        return true;
+    }
 };
 
 
