@@ -56,4 +56,27 @@ public:
     bool IsEmpty() {
         return MydblLinkedList.IsEmpty();
     }
+    T GetItem(T value) {
+        return MydblLinkedList.GetItem(value);
+    }
+    void Reverse() {
+        MydblLinkedList.Reverse();
+    }
+    bool UpdateItem(int Index, T NewValue) {
+        return MydblLinkedList.UpdateItem(Index, NewValue);
+    }
+    bool InsertAfter(int Index, T value) {
+        return MydblLinkedList.InsertAfter(Index, value);
+    }
+    void InsertAtFront(T value) {
+        MydblLinkedList.InsertAtBeginning(value);
+    }
+    void InsertAtBack(T value) {
+        MydblLinkedList.InsertAtEnd(value);
+    }
+    void Clear() {
+        MydblLinkedList.Clear();
+    }
+
+
 };
